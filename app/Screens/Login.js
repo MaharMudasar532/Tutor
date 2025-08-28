@@ -1,14 +1,30 @@
-import { Text, TouchableOpacity, View } from 'react-native'
+import { useState } from 'react'
+import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 const Login = ({ navigation }) => {
 
+    const [name , setName ] = useState("")
+    const [email , setEmail ] = useState("")
 
     const handleLogin = () => {
         navigation.navigate("Bottom")
     }
     return (
         <View>
-            <Text>Login</Text>
+        
+
+            <TextInput
+                onChangeText={(e)=>setName(e) }
+                style={{ height: 60, borderColor: 'gray', borderWidth: 1,width:"90%",alignSelf:'center' }}
+                placeholder="Enter your name "
+            />
+       
+            <TextInput
+            onChangeText={(e)=>setEmail(e) }
+                style={{ height: 60, borderColor: 'gray', borderWidth: 1,width:"90%",alignSelf:'center',marginTop:10,marginBottom:10 }}
+                placeholder="Email"
+            />
+       
 
             <TouchableOpacity 
             onPress={handleLogin}

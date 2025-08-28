@@ -1,20 +1,19 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaView } from 'react-native';
+import Login from '../Screens/Login';
 
 // Import Screens
-import BottomTab from './(tabs)/BottomTab';
-import Login from './Screens/Login';
+
+
 const Stack = createNativeStackNavigator();
 
-const App = () => {
+const HomeStack = () => {
   return (
     // <NavigationContainer>
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <Stack.Navigator initialRouteName="Login">
           <Stack.Screen name="Login" component={Login} />
-        {/* <Stack.Screen name="Setting" component={Setting} /> */}
-          {/* <Stack.Screen name="Date" component={SelectVehicle} /> */}
-          <Stack.Screen name="Bottom" component={BottomTab} /> 
+     
          
         </Stack.Navigator>
       </SafeAreaView>
@@ -22,4 +21,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default HomeStack;
